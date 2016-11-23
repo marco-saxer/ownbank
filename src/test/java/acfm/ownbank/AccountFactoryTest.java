@@ -29,7 +29,7 @@ public class AccountFactoryTest {
 		
 		AccountFactory factory = new AccountFactoryImpl();
 		
-		AccountReadable accountReadable = factory.createAccount(creditLine, AccountType.SAVING_ACCOUNT);
+		AccountReadable accountReadable = factory.createAccount(creditLine, AccountType.CREDIT_ACCOUNT);
 		
 		Assert.assertThat(accountReadable, instanceOf(CreditAccount.class));
 	}
