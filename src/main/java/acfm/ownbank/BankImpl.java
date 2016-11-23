@@ -7,7 +7,7 @@ public class BankImpl implements Bank {
 
 	AccountNumberGenerator generator;
 	
-	Map accounts = new HashMap();
+	Map<Integer,Account> accounts = new HashMap();
 	
 	public BankImpl(AccountNumberGenerator generator) {
 		super();
@@ -24,23 +24,26 @@ public class BankImpl implements Bank {
 
 	public void deposit(int accNumber, int amount) {
 		// TODO Auto-generated method stub
-		
-
+		Account AccNew = accounts.get(accNumber);
+		AccNew.book(amount);		
 	}
 
 	public void transfer(int accNumberFrom, int accNumberTo, int amount) {
-		// TODO Auto-generated method stub
-
+		// TODO Auto-generated method stub	
+		deposit(accNumberFrom,amount);withdrawal(accNumberTo,amount);
 	}
 
 	public void withdrawal(int accNumber, int amount) {
 		// TODO Auto-generated method stub
+		Account AccNew = accounts.get(accNumber);
+		AccNew.book(-amount);	
 
 	}
 
 	public int getBalance(int accNumber) {
 		// TODO Auto-generated method stub
-		return 0;
+		Account AccNew = accounts.get(accNumber);
+		return AccNew.getBalance();
 	}
 
 }
