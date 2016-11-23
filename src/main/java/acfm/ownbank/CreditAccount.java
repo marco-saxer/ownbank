@@ -1,5 +1,10 @@
 package acfm.ownbank;
 
+/**
+ * 
+ * @author fabio.sulser
+ *
+ */
 public class CreditAccount extends AbstractAccount{
 
 	private int creditLine;
@@ -11,8 +16,7 @@ public class CreditAccount extends AbstractAccount{
 	
 	@Override
 	boolean verifyBookingCondition(int amount) {
-		return getBalance() + amount < creditLine;
-		
+		return getBalance() + amount > creditLine;
 	}
 
 
