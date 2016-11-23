@@ -74,8 +74,8 @@ public class BankTest {
 
 		bank.transfer(accountFrom, accountTo, amount);
 
-		assertEquals(-100, bank.getBalance(accountFrom));
-		assertEquals(100, bank.getBalance(accountTo));
+		assertEquals(100, bank.getBalance(accountFrom));
+		assertEquals(-100, bank.getBalance(accountTo));
 
 
 	}
