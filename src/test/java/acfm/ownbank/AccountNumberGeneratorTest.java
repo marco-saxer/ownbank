@@ -1,5 +1,8 @@
 package acfm.ownbank;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -17,7 +20,17 @@ public class AccountNumberGeneratorTest {
 		Assert.assertNotEquals(a, c);
 		Assert.assertNotEquals(a, b);
 		Assert.assertNotEquals(b, c);
+	
 	}
 	
-	
+	@Test
+	public void testNumberSet(){
+		Set set1 = new HashSet();
+
+		for (int i = 0; i< 1000; i++) {
+		  set1.add(generator.getAccountNumber());		
+		}
+		
+		Assert.assertEquals(set1.size(),1000);
+	}
 }
