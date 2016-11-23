@@ -25,16 +25,16 @@ public class BankImpl implements Bank {
 		return accNumber;
 	}
 
-	public void deposit(int accNumber, int amount) {
+	public void deposit(int accNumber, int amount) throws AccountOverdrawnException {
 		Account AccNew = accounts.get(accNumber);
 		AccNew.book(amount);		
 	}
 
-	public void transfer(int accNumberFrom, int accNumberTo, int amount) {
+	public void transfer(int accNumberFrom, int accNumberTo, int amount) throws AccountOverdrawnException {
 		deposit(accNumberFrom,amount);withdrawal(accNumberTo,amount);
 	}
 
-	public void withdrawal(int accNumber, int amount) {
+	public void withdrawal(int accNumber, int amount) throws AccountOverdrawnException {
 		Account AccNew = accounts.get(accNumber);
 		AccNew.book(-amount);	
 

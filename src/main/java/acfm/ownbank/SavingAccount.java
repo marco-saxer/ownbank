@@ -8,7 +8,7 @@ public class SavingAccount extends AbstractAccount{
 
 	@Override
 	boolean verifyBookingCondition(int amount) {
-		return getBalance() + amount < 0;		
+		return (getBalance() + amount >= 0);		
 	}
 
 }

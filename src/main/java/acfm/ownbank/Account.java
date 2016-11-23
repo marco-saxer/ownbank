@@ -6,7 +6,7 @@ package acfm.ownbank;
  */
 public interface Account {
 
-	public void book(int amount);
+	public void book(int amount) throws AccountOverdrawnException;
 	
 	public int getBalance();
 	

@@ -15,9 +15,9 @@ public abstract class AbstractAccount implements Account{
 		this.accountNumber = accountNumber;
 	}
 	
-	public void book(int amount){
+	public void book(int amount) throws AccountOverdrawnException{
 		if(!verifyBookingCondition(amount)){
-			//TODO throw exception
+			throw new AccountOverdrawnException();
 		}
 		balance += amount;
 	}
