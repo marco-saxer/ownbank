@@ -11,7 +11,7 @@ public class BankImpl implements Bank {
 
 	AccountNumberGenerator generator;
 	
-	Map<Integer,Account> accounts = new HashMap<Integer, Account>();
+	Map<Integer, AccountWritable> accounts = new HashMap<Integer, AccountWritable>();
 	
 	public BankImpl(AccountNumberGenerator generator) {
 		super();
@@ -19,14 +19,14 @@ public class BankImpl implements Bank {
 	}
 
 	public int createAccount() {
-		Account accountNew = new SavingAccount(generator.getAccountNumber());	
+		AccountWritable accountNew = new SavingAccount(generator.getAccountNumber());	
 		int accNumber = accountNew.getAcountNumber();
 		accounts.put(accNumber,accountNew);
 		return accNumber;
 	}
 
 	public void deposit(int accNumber, int amount) throws AccountOverdrawnException {
-		Account AccNew = accounts.get(accNumber);
+		AccountWritable AccNew = accounts.get(accNumber);
 		AccNew.book(amount);		
 	}
 
@@ -35,13 +35,13 @@ public class BankImpl implements Bank {
 	}
 
 	public void withdrawal(int accNumber, int amount) throws AccountOverdrawnException {
-		Account AccNew = accounts.get(accNumber);
+		AccountWritable AccNew = accounts.get(accNumber);
 		AccNew.book(-amount);	
 
 	}
 
 	public int getBalance(int accNumber) {
-		Account AccNew = accounts.get(accNumber);
+		AccountWritable AccNew = accounts.get(accNumber);
 		return AccNew.getBalance();
 	}
 

@@ -4,7 +4,7 @@ package acfm.ownbank;
  * @author fabio.sulser
  *
  */
-public abstract class AbstractAccount implements Account{
+public abstract class AbstractAccount implements AccountWritable{
 	private int balance;
 	private int accountNumber;
 	
