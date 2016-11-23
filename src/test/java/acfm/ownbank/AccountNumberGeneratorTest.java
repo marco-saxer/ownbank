@@ -6,6 +6,11 @@ import java.util.Set;
 import org.junit.Assert;
 import org.junit.Test;
 
+/**
+ * 
+ * @author fabio.sulser
+ *
+ */
 public class AccountNumberGeneratorTest {
 	
 	AccountNumberGenerator generator = new AccountNumberGeneratorImpl();

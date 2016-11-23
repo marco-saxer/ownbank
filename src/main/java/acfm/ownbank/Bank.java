@@ -1,5 +1,9 @@
 package acfm.ownbank;
-
+/**
+ * 
+ * @author fabio.sulser
+ *
+ */
 public interface Bank {
 	
 	public int createAccount();

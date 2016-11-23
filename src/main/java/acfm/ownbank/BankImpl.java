@@ -2,7 +2,11 @@ package acfm.ownbank;
 
 import java.util.HashMap;
 import java.util.Map;
-
+/**
+ * 
+ * @author fabio.sulser
+ *
+ */
 public class BankImpl implements Bank {
 
 	AccountNumberGenerator generator;

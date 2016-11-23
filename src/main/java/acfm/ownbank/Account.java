@@ -1,5 +1,9 @@
 package acfm.ownbank;
-
+/**
+ * 
+ * @author fabio.sulser
+ *
+ */
 public interface Account {
 
 	public void book(int amount);

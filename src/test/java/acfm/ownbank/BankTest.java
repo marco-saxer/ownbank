@@ -5,7 +5,11 @@ import static org.junit.Assert.assertEquals;
 import org.easymock.EasyMock;
 import org.junit.Before;
 import org.junit.Test;
-
+/**
+ * 
+ * @author fabio.sulser
+ *
+ */
 public class BankTest {
 
 	@Before

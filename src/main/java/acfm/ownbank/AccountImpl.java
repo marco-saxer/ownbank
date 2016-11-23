@@ -1,5 +1,9 @@
 package acfm.ownbank;
-
+/**
+ * 
+ * @author fabio.sulser
+ *
+ */
 public class AccountImpl implements Account {
 
 	private int balance;

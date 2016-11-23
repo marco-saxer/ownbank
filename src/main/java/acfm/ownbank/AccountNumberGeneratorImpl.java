@@ -1,5 +1,9 @@
 package acfm.ownbank;
-
+/**
+ * 
+ * @author fabio.sulser
+ *
+ */
 public class AccountNumberGeneratorImpl implements AccountNumberGenerator {
 
 	int accountNumber = 1000;
