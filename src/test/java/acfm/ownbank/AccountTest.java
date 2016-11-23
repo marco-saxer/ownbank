@@ -9,19 +9,20 @@ import org.junit.Test;
 
 public class AccountTest {
 
-	Account account;
+	AccountNumberGenerator accountNumberGenerator;
 
 	@Before
 	public void setup() {
-		AccountNumberGenerator accountNumberGenerator = new AccountNumberGeneratorImpl();
-
-		account = new AccountImpl(accountNumberGenerator);
+		accountNumberGenerator = new AccountNumberGeneratorImpl();
 
 	}
 
 	@Test
 	public void testBookAccount() throws Exception {
 		int amount = 100;
+		Account account = new AccountImpl(accountNumberGenerator);
+
+		assertEquals(0, account.getBalance());
 		account.book(amount);
 		assertEquals(amount, account.getBalance());
 
@@ -29,8 +30,6 @@ public class AccountTest {
 
 	@Test
 	public void testAccNumber() throws Exception {
-		
-		
 		// create mock
 		AccountNumberGenerator accountNumberGenerator = EasyMock.createMock(AccountNumberGenerator.class);
 		EasyMock.expect(accountNumberGenerator.getAccountNumber()).andReturn(10);
