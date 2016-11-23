@@ -24,7 +24,7 @@ public class AccountTest {
 	@Test
 	public void testBookAccount() {
 		int amount = 100;
-		Account account = new AccountImpl(accountNumberGenerator);
+		Account account = new AccountImpl(1);
 
 		assertEquals(0, account.getBalance());
 		account.book(amount);
@@ -40,11 +40,9 @@ public class AccountTest {
 
 		EasyMock.replay(accountNumberGenerator);
 
-		Account acc = new AccountImpl(accountNumberGenerator);
+		Account acc = new AccountImpl(1);
 
-		assertEquals(10, acc.getAcountNumber());
-
-		EasyMock.verify(accountNumberGenerator);
+		assertEquals(1, acc.getAcountNumber());
 
 
 	}

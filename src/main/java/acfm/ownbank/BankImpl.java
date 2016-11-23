@@ -20,7 +20,7 @@ public class BankImpl implements Bank {
 
 	public int createAccount() {
 		// TODO Auto-generated method stub
-		Account accountNew = new AccountImpl(generator);	
+		Account accountNew = new AccountImpl(generator.getAccountNumber());	
 		int accNumber = accountNew.getAcountNumber();
 		accounts.put(accNumber,accountNew);
 		return accNumber;
