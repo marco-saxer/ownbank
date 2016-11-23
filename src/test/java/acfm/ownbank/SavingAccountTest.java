@@ -22,7 +22,7 @@ public class SavingAccountTest {
 		EasyMock.expect(accountNumberGenerator.getAccountNumber()).andReturn(accountNumber);
 		EasyMock.replay(accountNumberGenerator);
 
-		Account account = new SavingAccount(accountNumberGenerator.getAccountNumber());
+		AccountWritable account = new SavingAccount(accountNumberGenerator.getAccountNumber());
 				
 		Assert.assertNotEquals(account, null);
 
@@ -39,7 +39,7 @@ public class SavingAccountTest {
 		EasyMock.expect(accountNumberGenerator.getAccountNumber()).andReturn(accountNumber);
 		EasyMock.replay(accountNumberGenerator);
 
-		Account account = new SavingAccount(accountNumberGenerator.getAccountNumber());				
+		AccountWritable account = new SavingAccount(accountNumberGenerator.getAccountNumber());				
 		
 		try {
 			account.book(-amount);
@@ -51,7 +51,7 @@ public class SavingAccountTest {
 	@Test
 	public void checkForBookingSuccess() throws AccountOverdrawnException {
 		AccountNumberGenerator accountNumberGenerator = new AccountNumberGeneratorImpl();
-		Account account = new SavingAccount(accountNumberGenerator.getAccountNumber());				
+		AccountWritable account = new SavingAccount(accountNumberGenerator.getAccountNumber());				
 		int amount = 100;
 		
 		account.book(amount);
