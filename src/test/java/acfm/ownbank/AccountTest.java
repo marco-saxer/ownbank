@@ -18,7 +18,7 @@ public class AccountTest {
 	}
 
 	@Test
-	public void testBookAccount() throws Exception {
+	public void testBookAccount() {
 		int amount = 100;
 		Account account = new AccountImpl(accountNumberGenerator);
 
@@ -29,19 +29,18 @@ public class AccountTest {
 	}
 
 	@Test
-	public void testAccNumber() throws Exception {
+	public void testAccNumber() {
 		// create mock
 		AccountNumberGenerator accountNumberGenerator = EasyMock.createMock(AccountNumberGenerator.class);
 		EasyMock.expect(accountNumberGenerator.getAccountNumber()).andReturn(10);
 
 		EasyMock.replay(accountNumberGenerator);
-		
+
 		Account acc = new AccountImpl(accountNumberGenerator);
 
 		assertEquals(10, acc.getAcountNumber());
 
 		EasyMock.verify(accountNumberGenerator);
-
 
 
 	}
