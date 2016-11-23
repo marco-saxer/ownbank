@@ -9,6 +9,9 @@ public class AccountFactoryImpl implements AccountFactory {
 	}
 
 	public AccountReadable createAccount(int creditLine, AccountType accountType) throws AccountTypeException {
+		if(accountType == null){
+			throw new AccountTypeException();			
+		}
 		AbstractAccount newAccount = null;
 		int accNumber = accountNumberGenerator.getAccountNumber();
 		switch (accountType) {
